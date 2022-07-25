@@ -1,0 +1,20 @@
+.card-container {
+  width: 900px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container__image {
+  width: 100%;
+  height: 320px;
+}
+
+.card-container__title {
+}
+
+.card-container__description {
+}
