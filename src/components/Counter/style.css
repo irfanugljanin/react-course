@@ -1,0 +1,13 @@
+.counter {
+  position: relative;
+  top: 50px;
+  left: 30px;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter button {
+  width: 50px;
+  height: 50px;
+}
