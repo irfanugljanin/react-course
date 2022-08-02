@@ -4,11 +4,12 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Card from "./components/Card/Card";
 import Counter from "./components/Counter";
+import TemperatureControler from "./components/Temperature Control";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-  <Counter />
+  <TemperatureControler />
   // </React.StrictMode>
 );
 
