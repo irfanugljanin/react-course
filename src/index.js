@@ -2,14 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Card from "./components/Card/Card";
-import Counter from "./components/Counter";
-import TemperatureControler from "./components/Temperature Control";
+import Filter from "./components/Filter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-  <TemperatureControler />
+  <Filter />
   // </React.StrictMode>
 );
 
