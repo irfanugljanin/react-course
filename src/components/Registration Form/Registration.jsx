@@ -10,24 +10,66 @@ const Registration = () => {
     email: "",
   });
 
-  const handlerChangeEvent = (e) => {
-    setValues({ ...values, firstName: e.target.value });
+  const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false);
+
+  const firstnameChangeEvent = (event) => {
+    setValues({ ...values, firstName: event.target.value });
+  };
+
+  const lastnameChangeEvent = (event) => {
+    setValues({ ...values, lastName: event.target.value });
+  };
+
+  const emailChangeEvent = (event) => {
+    setValues({ ...values, email: event.target.value });
+  };
+
+  const handlerSubmit = (event) => {
+    event.preventDefault();
+    if (values.firstName && values.lastName && values.email) {
+      setValid(true);
+    }
+    setSubmitted(true);
   };
 
   return (
-    <section className="registration">
-      <div className="form">
+    <div className="registration">
+      <form className="form" onSubmit={handlerSubmit}>
+        {submitted && valid ? (
+          <div className="succes-message">Succes! Thank you</div>
+        ) : null}
         <Input
-          onChange={handlerChangeEvent}
+          onChange={firstnameChangeEvent}
           value={values.firstName}
           inputName={"Name"}
         />
-        <Input value={values.lastName} inputName={"Lastname"} />
-        <Input value={values.email} inputName={"Email"} />
-        <button className="button">Register</button>
-      </div>
-      ;
-    </section>
+        {submitted && !values.firstName ? (
+          <span className="message">Please enter your first name</span>
+        ) : null}
+
+        <Input
+          disabled={submitted}
+          onChange={lastnameChangeEvent}
+          value={values.lastName}
+          inputName={"Lastname"}
+        />
+        {submitted && !values.lastName ? (
+          <span className="message">Please enter your last name</span>
+        ) : null}
+        <Input
+          onChange={emailChangeEvent}
+          value={values.email}
+          inputName={"Email"}
+        />
+        {submitted && !values.email ? (
+          <span className="message">Please enter your email</span>
+        ) : null}
+        <button type="submit" className="button">
+          Register
+        </button>
+      </form>
+    </div>
   );
 };
 
