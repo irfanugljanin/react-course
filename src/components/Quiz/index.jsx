@@ -45,12 +45,19 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
+  const restartQuiz = () => {
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+  };
+
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
       setScore(score + 1);
     }
 
     const nextQuestion = currentQuestion + 1;
+
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
@@ -65,6 +72,7 @@ export default function App() {
       {showScore ? (
         <div className="score-section">
           You scored {score} out of {questions.length}
+          <button onClick={restartQuiz}>Restart</button>
         </div>
       ) : (
         <>
