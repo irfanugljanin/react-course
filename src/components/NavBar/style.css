@@ -4,6 +4,14 @@
 
 .container {
   width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.top-navigation {
+  width: 100%;
   height: 72px;
   background-color: rgb(92, 92, 255);
   display: flex;
@@ -12,7 +20,7 @@
   align-items: center;
 }
 
-.container img {
+.top-navigation img {
   width: 48px;
   height: 48px;
   padding: 0 56px;
@@ -74,6 +82,10 @@
   height: 100%;
 }
 
+.sidebar {
+  display: none;
+}
+
 @media screen and (max-width: 640px) {
   .navigation {
     display: none;
@@ -93,5 +105,32 @@
   .hamburger-menu img {
     padding: 0;
     background-color: rgb(176, 176, 255);
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    background-color: rgb(128, 128, 255);
+  }
+
+  .sidebar a {
+    box-sizing: border-box;
+    color: white;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-bottom: 1px solid white;
+  }
+
+  .sidebar a:hover {
+    background-color: white;
+    color: rgb(128, 128, 255);
   }
 }
