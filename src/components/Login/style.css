@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.container {
+  width: 320px;
+  height: 480px;
+  background-color: lightgrey;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.title {
+  width: 100%;
+  height: 104px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-signup {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-signup button {
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+.signin-google {
+  width: 288px;
+  height: 40px;
+  margin-top: 16px;
+  border: 1px solid rgb(169, 169, 169);
+  border-radius: 5px;
+}
+
+.container input {
+  width: 288px;
+  height: 40px;
+  padding: 16px;
+  margin: 8px 0;
+  border: none;
+}
+
+.submit {
+  width: 100%;
+  height: 56px;
+  border: none;
+  background-color: rgb(176, 115, 0);
+  color: white;
+  font-weight: 600;
+  border-radius: 0 0 3px 3px;
+}
